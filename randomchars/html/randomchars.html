@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Characters</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script language="JavaScript" SRC="../js/randomizer.js"></script>
+    <script language="JavaScript" src="../js/utils.js"></script>
+    <script language="JavaScript" src="../js/domutils.js"></script>
+</head>
+<body>
+
+<section style="margin-left: 20px">
+    <h1>Woorden genereren</h1>
+    <h3>Maak 7 woorden van 2 karakters</h3>
+    <p>Uitleg en voorwaarden.
+        <ol>
+            <li>Gebruik de JavaScript functie en multidimensionale array in het bestand randomizer.js</li>
+            <li>Bereken de waarde van een gegenereerd karakter, dit kan de ASCII waarde zijn maar het mag ook de alfabetwaarde zijn</li>
+            <li>Bereken de totaalwaarde van de twee karakters</li>
+            <li>Sla deze woorden op in een array </li>
+            <li>Sla ook de totaal waarde van de twee karakters op in de array</li>
+            <li>Zet in elke functie commentaar, input en output en een beschrijving</li>
+            <li>Bekijk de JavaScript code, er staan een aantal TODO items in, werk deze uit</li>
+            <li>Pas de styling aan naar jouw voorkeur</li>
+        </ol>
+    </p>
+    <p>Extra uitdagingen
+        <ol>
+            <li>Er mogen enkel unieke waardes voorkomen in de tabel</li>
+            <li>Bepaal hoe vaak de functie moet worden aangeroepen om een 7-tal uniek aantal woorden te krijgen</li>
+            <li>Sorteer de array op volgorde van de waarde van de karakters</li>
+            <li>Maak je eigen sorteer functie, geen standaard sorteerroutines gebruiken</li>
+        </ol>
+    </p>
+</section>
+  <p id="message"></p>
+<section style="margin-left: 20px">
+    <h1>
+        <h3>Opmerkingen</h3>
+        <ul>
+            <li> De lettercombinatie az heeft een woordwaarde van 27 (alfabet) of 219 (ASCII).</li>
+            <li> De waarde van az is hetzelfde als van za</li>
+            <li> De woorden by en yb hebben dezelfde waarde als de voorgaande combinaties az en za</li>
+            <li> Zodra je hoofdletters en kleine letters gaat gebruiken kan je niet meer de positie in het alfabet gebruiken voor het totaal</li>
+        </ul>
+        <h3>Praktische toepassing</h3>
+        <ul>
+            <li> Met hoofdletters, kleine letters, cijfers en speciale karakters als invoer heb je het begin van een wachtwoord generator</li>
+        </ul>
+    </h1>
+</section>
+
+<section style="margin-left: 20px">
+    <h3>Invoer en uitvoer</h3>
+    <form name="programma">
+        <table border="1px" bgcolor="#ffffff">
+            <tr>
+                <td>Aantal woorden:
+                <td><input type="text" name="numberOfWords" size="4" value="7">
+            <tr>
+                <td>Aantal karakters per woord:
+                <td><input type="text" name="numberOfCharacters" size="2" value="2">
+            <tr>
+                <td>Karakters:
+                <td><input type="text" name="characters" size=26 value="abcdefghijklmnopqrstuvwxyz">
+        </table>
+
+        <p>
+                <input type="button" value="Maak de woorden"
+                   onclick="generateWords(
+                       document.programma.numberOfWords.value,
+                       document.programma.numberOfCharacters.value,
+                       document.programma.characters.value)">
+        </p>
+        <p id="wordList"></p>
+        <p id="totalFunctionCalls"></p>
+
+    </form>
+</section>
+
+</body>
+</html>
